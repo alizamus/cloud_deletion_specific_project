@@ -28,7 +28,7 @@ def main(argv):
 	if tenants_list:
 		for i in range(len(tenants_list)):
 			if tenants_list[i].name not in predef_tenants:
-				if tenans_list[i].name == project_name:
+				if tenants_list[i].name == project_name:
 					tenants_list[i].delete()
 
 
