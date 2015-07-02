@@ -36,15 +36,15 @@ def main(argv):
 	
 	
 	for tenant in tenants:
-		res= os.system("/root/cloud_deletion/code/config --username admin --password " + admin_pass + " --tenant " + tenant +  " --api-server 127.0.0.1 show service-instance" + " > " + "/root/cloud_deletion/test.csv")
+		res= os.system("/root/cloud_deletion_specific_project/code/config --username admin --password " + admin_pass + " --tenant " + tenant +  " --api-server 127.0.0.1 show service-instance" + " > " + "/root/cloud_deletion_specific_project/test.csv")
 	
-		with open('/root/cloud_deletion/test.csv', 'rb') as csvfile:
+		with open('/root/cloud_deletion_specific_project/test.csv', 'rb') as csvfile:
 			rules = csv.reader(csvfile)
 			for row in rules:
 				a = str(row[0])
 				b = a.split('    ',1)[1]
 				c = a.split('    ',1)[0]
-				comand = "/root/cloud_deletion/code/config --username admin --password " + admin_pass + " --tenant " + tenant +  " --api-server 127.0.0.1 delete service-instance " + "'" + b + "'"
+				comand = "/root/cloud_deletion_specific_project/code/config --username admin --password " + admin_pass + " --tenant " + tenant +  " --api-server 127.0.0.1 delete service-instance " + "'" + b + "'"
 				#print comand	
 				os.system(comand)
 
