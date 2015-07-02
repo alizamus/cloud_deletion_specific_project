@@ -17,8 +17,8 @@ def main(argv):
 	                sys.exit()        
 	        elif opt in ("-a", "--admin_pass"):
 	                admin_pass = arg
-                elif opt in ("-p", "--project_name"):
-                        project_name = arg
+	        elif opt in ("-p", "--project_name"):
+	                project_name = arg
 	
 	keystone = kclient.Client(username='admin', password=admin_pass , tenant_name='admin', auth_url="http://127.0.0.1:5000/v2.0")
 	predef_tenants = ['admin','demo','service','invisible_to_admin']
