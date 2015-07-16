@@ -30,7 +30,7 @@ def main(argv):
 			if tenans_list[i].name == project_name:
 				tenants.append(str(tenans_list[i].name))
 	#print tenants
-	
+	for tenant in tenants:	
 		nova = nclient.Client(2,'admin', admin_pass, tenant, "http://127.0.0.1:5000/v2.0",service_type="compute")
 		try:
 			for i in range(len(nova.servers.list())):
